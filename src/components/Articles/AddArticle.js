@@ -1,6 +1,9 @@
 import React, { useState } from "react"
 //import "./AddArticle.css"
 
+// MaterialUi
+import Button from '@material-ui/core/Button';
+
 const AddArticle = ({ saveArticle }) => {
   const [article, setArticle] = useState()
 
@@ -29,7 +32,9 @@ const AddArticle = ({ saveArticle }) => {
         placeholder="Body"
         onChange={handleArticleData}
       />
-      <button>Add article</button>
+     {/*  <button>Add article</button> */}
+     {/* note we add type="submit" to make materialui button submit form */}
+     <Button variant="contained" type="submit">Add article</Button>
     </form>
   )
 }

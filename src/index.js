@@ -1,12 +1,17 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { createStore } from "redux"
-import { Provider } from "react-redux"
+
 import "./index.css"
 import App from "./App"
-import reducer from "./store/reducer"
 
-const store = createStore(reducer)
+import { createStore } from "redux"
+import { Provider } from "react-redux"
+
+import combineReducers from "./store/combineReducers"
+
+//for one reducer we can call
+//import articleReducer from "./store/Articles/articleReducer"
+//const store = createStore(articleReducer)
 //or
 //const store = createStore(reducer, initialState);
 
@@ -17,6 +22,13 @@ const store = createStore(reducer)
 //     { id: 2, title: "post 2", body: "Quisque cursus, metus vitae pharetra" },
 //   ],
 // } or  const initialState={articles:[]}
+
+
+//====================================================
+
+// for multi combaining reducer to give the abiltity to access all reducers by one store
+// we use combineReducers
+const store = createStore(combineReducers)
 
 ReactDOM.render(
   <Provider store={store}>

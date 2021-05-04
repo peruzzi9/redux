@@ -3,10 +3,13 @@ import React, { useState } from "react"
 import Article from "../components/Articles/ShowArticles"
 import AddArticle from "../components/Articles/AddArticle"
 
+// MaterialUi
+import Button from '@material-ui/core/Button';
+
 // for  redux state and actions / store
 import { connect } from "react-redux"
 import * as actionTypes from "../store/actionTypes"
-import { clearAllArticles } from "../store/action";
+import { clearAllArticles } from "../store/Articles/articleAction";
 
 //************** articles defintion before redux *********** */
 // const Articles = () => {
@@ -45,7 +48,7 @@ const Articles = ({ articles, saveArticle, clearAllArticles }) => (
       <Article key={article.id} article={article} />
 
     ))}
-    <button onClick={clearAllArticles} >Clear all articles </button>
+    <Button variant="contained" color="primary" onClick={clearAllArticles} >Clear all articles </Button>
     {/* or */}
     {/* <button onClick={() => clearAllArticles()} >Clear all articles </button> */}
   </div>
@@ -53,9 +56,19 @@ const Articles = ({ articles, saveArticle, clearAllArticles }) => (
 // get and connect with global state which is stored in redux store
 // mapStateToProps – this function determines which data is injected into the Articles display component.
 // here this data is articles
+
+// state is the store 
+// it can be {articles} when store is one reducer without combine
+// and it can be {article,theme,auth} when we store is combine of many reducers
+// article here is object contain  articles 
 const mapStateToProps = state => {
+  console.log("Articles=== Global State Store===",state) 
   return {
-    articles: state.articles,
+    // very very important name returned here should be the same in  
+    // function defention
+    // const Articles = ({ articles, saveArticle, clearAllArticles }) => (
+   
+    articles: state.article.articles,
     /* when we defined reducer inside redux store
    state= {
   articles: [

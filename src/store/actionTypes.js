@@ -19,3 +19,8 @@
 
 export const ADD_ARTICLE = "ADD_ARTICLE"
 export const CLEAR_ARTICLES = "CLEAR_ARTICLES"
+
+
+// SYSTEM Settings action types
+export const THEME_COLOR = 'theme_color';
+export const DARK_THEME = 'dark_theme';

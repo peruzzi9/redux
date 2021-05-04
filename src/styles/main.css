@@ -1,0 +1,168 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+/*!
+ * Bootstrap v4.0.0 (https://getbootstrap.com)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #B68A35;
+  --secondary: white;
+  --success: #4caf50;
+  --info: #00bcd4;
+  --warning: #ff9800;
+  --danger: #f44336;
+  --light: #e8eaf6;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Roboto", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #98c4f0;
+}
+
+/*Theme Dark Amber Styles*/
+body.dark-theme {
+  color: #E0E0E0;
+  background-color: #000;
+}
+ 
+/*Theme RED Styles*/
+body.red {
+  color: #f7f303;
+  background-color: rgb(211, 80, 80);
+}
+
+/*Theme DARK RED Styles*/
+body.dark-red {
+  color: #ccca46;
+  background-color: rgb(73, 11, 11);
+}
+
+/*Theme blue Styles*/
+body.blue {
+  color: #ffd634;
+  background-color: rgb(57, 103, 156);
+}
+
+/*Theme dark blue Styles*/
+body.dark-blue {
+  color: #ffd634;
+  background-color: rgb(33, 60, 90);
+}
+
+/*Theme green Styles*/
+body.green {
+  color: #f8f8f8;
+  background-color: rgb(51, 126, 44);
+}
+
+/*Theme dark green Styles*/
+body.dark-green {
+  color: #f8f8f8;
+  background-color: rgb(35, 85, 30);
+}
+
+/*Theme alaa Styles*/
+body.alaacolor {
+  color: #f8f8f8;
+  background-color: rgb(55, 165, 147);
+}
+/*Theme dark alaa Styles*/
+body.dark-alaacolor {
+  color: #f8f8f8;
+  background-color: rgb(29, 88, 79);
+} 
+
+.App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

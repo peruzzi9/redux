@@ -1,4 +1,4 @@
-import * as actionTypes from "./actionTypes"
+import * as actionTypes from "../actionTypes"
 
 // we can initial here inside reducer or when/where we call createStore
 // Ex: const store = createStore(reducer, initialState);
