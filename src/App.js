@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import Articles from "./containers/Articles"
-import ThemeSwitcher from "./containers/ThemeSwitcher"
+import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher"
+import LanguageSwitcher from "./components/LanguageSwitcher"
 
 import './styles/main.css';
 // need npm install  @material-ui/core before import MaterialUI
@@ -52,6 +53,9 @@ let { themeColor } = { themeColor: themeSettings.themeColor };
         <div>
           {/* component for switching theme with redux store */}
           <ThemeSwitcher />
+        </div>
+        <div>
+          <LanguageSwitcher/>
         </div>
         <header  >
           <img src={logo} className="App-logo" alt="logo" />

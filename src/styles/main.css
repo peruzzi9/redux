@@ -166,3 +166,9 @@ body.dark-alaacolor {
     }
   }
   
+/* Language switcher style */
+ 
+.pointer {
+  cursor: pointer;
+}
+ 

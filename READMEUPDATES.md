@@ -1,3 +1,7 @@
+# =============== 04/05/2021 ===============
+# adding language switcher component
+## adding language switcher reducer and actions
+### fix : move theme switcher from container to components folder and update imports
 
 # =============== 03/05/2021 ===============
 #

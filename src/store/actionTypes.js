@@ -24,3 +24,7 @@ export const CLEAR_ARTICLES = "CLEAR_ARTICLES"
 // SYSTEM Settings action types
 export const THEME_COLOR = 'theme_color';
 export const DARK_THEME = 'dark_theme';
+
+// language and direction
+export const SWITCH_LANGUAGE = 'switch-language';
+export const CHANGE_DIRECTION = 'change-direction';
