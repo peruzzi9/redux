@@ -8,18 +8,23 @@ import './styles/main.css';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import greenTheme from './themes/greenTheme';
 import redTheme from './themes/redTheme';
-import darkTheme from './themes/darkTheme';
+import blueTheme from './themes/blueTheme';
 import alaaTheme from './themes/alaaTheme';
 import { GREEN, RED, BLUE, ALAACOLOR } from './constants/ThemeColors';
+
+// language provider to change user interface texts language
+import {IntlProvider} from 'react-intl' 
+import AppLocale from './lngProvider';
 
 // for  redux state and actions / store 
 import { connect } from 'react-redux';
 
-const App = ({themeSettings}) => {
+const App = ({Settings}) => {
 //this is come after mapStateToProps
-console.log("App settings from  store ===", themeSettings)
-let { themeColor } = { themeColor: themeSettings.themeColor };
-  
+console.log("App settings from  store ===", Settings)
+let { themeColor } = { themeColor: Settings.themeColor };
+let  language  =  Settings.language ; 
+document.title = language.locale == "ar" ? "مثال بالريدوكس": "Redux Example"; 
   //applyTheme= createMuiTheme(alaaTheme);
   /* if (isDarkTheme) {
     applyTheme = createMuiTheme(darkTheme)
@@ -39,6 +44,10 @@ let { themeColor } = { themeColor: themeSettings.themeColor };
         applyTheme = createMuiTheme(alaaTheme);
         break;
       }
+      case BLUE: {
+        applyTheme = createMuiTheme(blueTheme);
+        break;
+      }
       default:
         {
           applyTheme = applyTheme;
@@ -47,8 +56,13 @@ let { themeColor } = { themeColor: themeSettings.themeColor };
     }
   /* } */
 
+  const currentAppLocale = AppLocale[language.locale];
   return (
     <MuiThemeProvider theme={applyTheme}>
+      <IntlProvider
+         locale={currentAppLocale.locale}
+         messages={currentAppLocale.messages}>
+                         
       <div className="App">
         <div>
           {/* component for switching theme with redux store */}
@@ -63,7 +77,8 @@ let { themeColor } = { themeColor: themeSettings.themeColor };
         </header>
 
       </div>
-
+ 
+      </IntlProvider>
     </MuiThemeProvider>
   )
 }
@@ -71,7 +86,9 @@ let { themeColor } = { themeColor: themeSettings.themeColor };
 const mapStateToProps = statefromstore => {
   console.log("App=== Global State Store ======", statefromstore)
   const { themeColor, darkTheme } = statefromstore.theme;
-  return { themeSettings: { themeColor, isDarkTheme: darkTheme } }
+  //get language from redux store
+  const  language  = statefromstore.languageDirection.locale;
+  return { Settings: { themeColor, isDarkTheme: darkTheme ,language } }
   // very very important name returned here should be the same in  
   // function defention
   // const App = ({themeSettings}) => {

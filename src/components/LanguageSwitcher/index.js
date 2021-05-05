@@ -2,7 +2,7 @@ import React from 'react';
 
 import LanguageItem from './LanguageItem';
 import languageData from './data';
-import CustomScrollbars from '../util/CustomScrollbars';
+import CustomScrollbars from '../../util/CustomScrollbars';
 
 // for  redux state and actions / store 
 import { connect } from 'react-redux';

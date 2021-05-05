@@ -4,7 +4,10 @@ import React, { useState } from "react"
 // MaterialUi
 import Button from '@material-ui/core/Button';
 
-const AddArticle = ({ saveArticle }) => {
+//change interface texts depending on language
+import IntlMessages from '../../util/IntlMessages';
+
+const AddArticle = ({ saveArticle , language}) => {
   const [article, setArticle] = useState()
 
   const handleArticleData = e => {
@@ -23,18 +26,18 @@ const AddArticle = ({ saveArticle }) => {
       <input
         type="text"
         id="title"
-        placeholder="Title"
+        placeholder={language.locale=="ar"?"العنوان":"Title"}
         onChange={handleArticleData}
       />
       <input
         type="text"
         id="body"
-        placeholder="Body"
+        placeholder={language.locale=="ar"?"الموضوع":"Body"}
         onChange={handleArticleData}
       />
      {/*  <button>Add article</button> */}
      {/* note we add type="submit" to make materialui button submit form */}
-     <Button variant="contained" type="submit">Add article</Button>
+     <Button variant="contained" type="submit"> <IntlMessages id="article.add" /></Button>
     </form>
   )
 }

@@ -20,6 +20,7 @@ export default {
         danger: 'orange',
     },
     typography: {
+        fontFamily: "DroidKufi-Regular, Segoe UI, Segoe, Tahoma, Helvetica, Arial, sans-serif",
         button: {
             fontWeight: 400,
             textAlign: 'capitalize'

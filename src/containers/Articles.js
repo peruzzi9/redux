@@ -11,6 +11,9 @@ import { connect } from "react-redux"
 import * as actionTypes from "../store/actionTypes"
 import { clearAllArticles } from "../store/Articles/articleAction";
 
+//change interface texts depending on language
+import IntlMessages from '../util/IntlMessages';
+
 //************** articles defintion before redux *********** */
 // const Articles = () => {
 //     const [articles, setArticles] = useState([
@@ -41,14 +44,16 @@ import { clearAllArticles } from "../store/Articles/articleAction";
 // saveArticle new defintion using 
 // mapDispatchToProps
 
-const Articles = ({ articles, saveArticle, clearAllArticles }) => (
+const Articles = ({ articles, language , saveArticle, clearAllArticles }) => ( 
   <div>
-    <AddArticle saveArticle={saveArticle} />
+    <div><IntlMessages id="article.addtitle" /></div>
+    <AddArticle saveArticle={saveArticle} language={language}/>
+    <div><IntlMessages id="article.allarticletitle" /></div>
     {articles.map(article => (
-      <Article key={article.id} article={article} />
+      <Article key={article.id} article={article} language={language} />
 
     ))}
-    <Button variant="contained" color="primary" onClick={clearAllArticles} >Clear all articles </Button>
+    <Button variant="contained" color="primary" onClick={clearAllArticles} ><IntlMessages id="article.clearall" /></Button>
     {/* or */}
     {/* <button onClick={() => clearAllArticles()} >Clear all articles </button> */}
   </div>
@@ -63,6 +68,8 @@ const Articles = ({ articles, saveArticle, clearAllArticles }) => (
 // article here is object contain  articles 
 const mapStateToProps = state => {
   console.log("Articles=== Global State Store===",state) 
+  //get language from redux store
+  const  language  = state.languageDirection.locale;
   return {
     // very very important name returned here should be the same in  
     // function defention
@@ -77,6 +84,7 @@ const mapStateToProps = state => {
   ],
 }
     */
+   language : language
   }
 }
 

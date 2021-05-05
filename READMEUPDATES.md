@@ -1,3 +1,14 @@
+# =============== 05/05/2021 ===============
+# get language from store in all existing component
+## change title of website depending on that
+### add languages files translator 
+#### change texts of interface depending on these files and current language using  language provider of "react-intl" library 
+
+note : we shoud install specific version of  react-intl ....
+ npm i -s react-intl@^2.4.0
+
+##### add DroidKufi-Regular font 
+
 # =============== 04/05/2021 ===============
 # adding language switcher component
 ## adding language switcher reducer and actions

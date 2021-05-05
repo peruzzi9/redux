@@ -68,16 +68,16 @@ const ThemeSwitcher = ({ settings, setDarkTheme, setThemeColor }) => {
                 */}
                 <Button variant="contained">Default</Button>
                 <Button variant="contained" color="primary">
-                  Primary
+                  الصفحة الرئيسية
                 </Button>
                 <Button variant="contained" color="secondary">
-                  Secondary
+                  المنتجات
                 </Button>
                 <Button variant="contained" disabled>
                   Disabled
                 </Button>
                 <Button variant="contained" color="primary" href="#contained-buttons">
-                  Link
+                  اتصل بنا
                 </Button>
               </div> 
               </div> 

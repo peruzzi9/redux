@@ -10,6 +10,14 @@
 @import url("https://fonts.googleapis.com/css?family=Monoton");
 @import url("https://fonts.googleapis.com/css?family=Bree+Serif");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+
+@font-face {
+  font-family: 'DroidKufi-Regular';
+  src: local('DroidKufi-Regular'), url(../fonts/droid-arabic-Kufi/DroidKufi-Regular.woff) format('woff');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -65,8 +73,9 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "DroidKufi-Regular";
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -172,3 +181,19 @@ body.dark-alaacolor {
   cursor: pointer;
 }
  
+.input {
+  font-family: "DroidKufi-Regular";
+  background-color: #282c34;
+}
+ 
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
