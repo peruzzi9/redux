@@ -65,26 +65,7 @@ const ThemeSwitcher = ({ settings, setDarkTheme, setThemeColor }) => {
     
             </div>
             <br></br>
-            <div>
-                {/* this is materialui Button component  themed by MuiThemeProvider 
-                   every change on theme color will effect these buttons
-                */}
-                <Button variant="contained">
-                  <IntlMessages id="header.homepage" />
-                  </Button>
-                <Button variant="contained" color="primary">
-                <IntlMessages id="header.products" />
-                </Button>
-                <Button variant="contained" color="secondary">
-                <IntlMessages id="header.aboutus" />
-                </Button>
-                <Button variant="contained" disabled>
-                <IntlMessages id="header.contactus" />
-                </Button>
-                <Button variant="contained" color="primary" href="#contained-buttons">
-                <IntlMessages id="header.login" />
-                </Button>
-              </div> 
+            
               </div> 
       )
       

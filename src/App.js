@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import Articles from "./containers/Articles"
-import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher"
-import LanguageSwitcher from "./components/LanguageSwitcher"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 import './styles/main.css';
 // need npm install  @material-ui/core before import MaterialUI
@@ -74,17 +74,15 @@ document.title = language.locale == "ar" ? "مثال بالريدوكس": "Redux
                          
       <div className="App">
         <div>
-          {/* component for switching theme with redux store */}
-          <ThemeSwitcher />
-        </div>
-        <div>
-          <LanguageSwitcher/>
+          <Header/>
         </div>
         <header  >
           <img src={logo} className="App-logo" alt="logo" />
           <Articles />
         </header>
-
+        <div>
+          <Footer/>
+        </div>
       </div>
  
       </IntlProvider>

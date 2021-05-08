@@ -1,3 +1,9 @@
+# =============== 8/05/2021 ===============
+# make header and footer component
+## move header components from App to Header
+# make react router / switcher
+
+
 # =============== 06/05/2021 ===============
 # fix change direction and clean not nessecary code
 # make reddirection to theme 
