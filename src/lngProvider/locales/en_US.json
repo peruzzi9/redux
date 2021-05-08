@@ -4,11 +4,20 @@
   "article.delete": "DELETE",
   "article.clearall": "DELETE ALL",
   "article.allarticletitle": "Articles",
+  "article.oldariclelink": "Old Articles Link",
+
+  "test.anylink":"رابط غير موجود",
 
   "header.homepage":"Home",
   "header.aboutus":"About",
   "header.contactus":"Contact us",
   "header.login":"Login",
   "header.products":"Products",
-  "header.downloads":"Downloads"
+  "header.downloads":"Downloads",
+
+  
+
+  "about.title":"About Company",
+  "about.description":"About Company About Company About Company About Company"
+
 }

@@ -1,8 +1,8 @@
 # =============== 8/05/2021 ===============
 # make header and footer component
 ## move header components from App to Header
-# make react router / switcher
-
+# make react router / switcher in App
+## update header with real link (router/withRouter) to use Link outside App 
 
 # =============== 06/05/2021 ===============
 # fix change direction and clean not nessecary code

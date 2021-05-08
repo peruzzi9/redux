@@ -1,5 +1,5 @@
 import React, { useState } from "react"
- 
+import { Link, withRouter } from "react-router-dom";
 
 import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher"
 import LanguageSwitcher from "./LanguageSwitcher"
@@ -12,42 +12,63 @@ import IntlMessages from '../util/IntlMessages';
 
 
 const Header = () => {
-    //this is come after mapStateToProps
-   
-      return (
-        <div>
-           <div>
-                {/* this is materialui Button component  themed by MuiThemeProvider 
+  //this is come after mapStateToProps
+
+  return (
+    <div>
+      <div>
+        {/* this is materialui Button component  themed by MuiThemeProvider 
                    every change on theme color will effect these buttons
                 */}
-                <Button variant="contained">
-                  <IntlMessages id="header.homepage" />
-                  </Button>
-                <Button variant="contained" color="primary">
-                <IntlMessages id="header.products" />
-                </Button>
-                <Button variant="contained" color="secondary">
-                <IntlMessages id="header.aboutus" />
-                </Button>
-                <Button variant="contained" disabled>
-                <IntlMessages id="header.contactus" />
-                </Button>
-                <Button variant="contained" color="primary" href="#contained-buttons">
-                <IntlMessages id="header.login" />
-                </Button>
-              </div>  
-              <div>
-          {/* component for switching theme with redux store */}
-          <ThemeSwitcher />
-        </div>
-        <div>
-          <LanguageSwitcher/>
-        </div>
-        </div> 
-      )
-      
-            } 
+        <Link to="/">
+          <Button variant="contained">
+            <IntlMessages id="header.homepage" />
+          </Button>
+        </Link>
+        <Link to="/articles">
+          <Button variant="contained" color="secondary">
+            <IntlMessages id="article.allarticletitle" />
+          </Button>
+        </Link>
+        <Link to="/products">
+          <Button variant="contained" color="primary">
+            <IntlMessages id="header.products" />
+          </Button>
+        </Link>
+        <Link to="/aboutus">
+          <Button variant="contained" color="secondary">
+            <IntlMessages id="header.aboutus" />
+          </Button>
+        </Link>
+        <Button variant="contained" color="secondary">
+          <Link to="/oldarticles"><IntlMessages id="article.oldariclelink" /></Link>
+        </Button>
+        <Button variant="contained" color="secondary">
+          <Link to="/also/will/not/match"><IntlMessages id="test.anylink" /></Link>
+        </Button>
 
- 
-  export default  Header
- 
+
+
+
+
+        <Button variant="contained" disabled>
+          <IntlMessages id="header.contactus" />
+        </Button>
+        <Button variant="contained" color="primary" href="#contained-buttons">
+          <IntlMessages id="header.login" />
+        </Button>
+      </div>
+      <div>
+        {/* component for switching theme with redux store */}
+        <ThemeSwitcher />
+      </div>
+      <div>
+        <LanguageSwitcher />
+      </div>
+    </div>
+  )
+
+}
+
+
+export default withRouter(Header)

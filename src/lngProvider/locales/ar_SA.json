@@ -4,11 +4,17 @@
   "article.delete": "حذف",
   "article.clearall": "حذف الكل",
   "article.allarticletitle": "المقالات",
+  "article.oldariclelink": "المقالات القديمة",
+
+  "test.anylink":"رابط غير موجود",
 
   "header.homepage":"الصفحة الرئيسية",
   "header.aboutus":"حول",
   "header.contactus":"اتصل بنا",
   "header.login":"تسجيل الدخول",
   "header.products":"المنتجات",
-  "header.downloads":"التحميل"
+  "header.downloads":"التحميل",
+
+  "about.title":"حول الشركة",
+  "about.description":"التحميل التحميل التحميل التحميلالتحميل التحميل التحميل التحميل التحميل"
 }
