@@ -1,3 +1,8 @@
+# =============== 06/05/2021 ===============
+# fix change direction and clean not nessecary code
+# make reddirection to theme 
+### update main menu titles depending on language
+
 # =============== 05/05/2021 ===============
 # get language from store in all existing component
 ## change title of website depending on that

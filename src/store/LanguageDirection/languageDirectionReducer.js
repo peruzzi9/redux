@@ -3,6 +3,7 @@ import {
     SWITCH_LANGUAGE
 } from '../actionTypes';
 
+// array of RTL languages
 const rltLocale = ['ar'];
 const initialSettings = {
    
@@ -25,12 +26,7 @@ const settings = (state = initialSettings, action) => {
                 locale: action.payload,
                 isDirectionRTL: rltLocale.includes(action.payload.locale)
             };
-        case CHANGE_DIRECTION:
-            return {
-                ...state,
-                isDirectionRTL: !state.isDirectionRTL
-            };
- 
+        
         default:
             return state;
     }

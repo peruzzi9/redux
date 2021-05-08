@@ -3,5 +3,12 @@
   "article.add": "إضافة",
   "article.delete": "حذف",
   "article.clearall": "حذف الكل",
-  "article.allarticletitle": "المقالات"
+  "article.allarticletitle": "المقالات",
+
+  "header.homepage":"الصفحة الرئيسية",
+  "header.aboutus":"حول",
+  "header.contactus":"اتصل بنا",
+  "header.login":"تسجيل الدخول",
+  "header.products":"المنتجات",
+  "header.downloads":"التحميل"
 }

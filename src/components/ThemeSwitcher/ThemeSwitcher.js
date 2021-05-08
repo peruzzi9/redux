@@ -11,6 +11,9 @@ import { useEffect } from 'react';
 
 import { GREEN, RED, BLUE, ALAACOLOR } from '../../constants/ThemeColors';
 
+//change interface texts depending on language
+import IntlMessages from '../../util/IntlMessages';
+
 const ThemeSwitcher = ({ settings, setDarkTheme, setThemeColor }) => {
     //this is come after mapStateToProps
   console.log("ThemeSwitcher settings from  store ===", settings)
@@ -66,18 +69,20 @@ const ThemeSwitcher = ({ settings, setDarkTheme, setThemeColor }) => {
                 {/* this is materialui Button component  themed by MuiThemeProvider 
                    every change on theme color will effect these buttons
                 */}
-                <Button variant="contained">Default</Button>
+                <Button variant="contained">
+                  <IntlMessages id="header.homepage" />
+                  </Button>
                 <Button variant="contained" color="primary">
-                  الصفحة الرئيسية
+                <IntlMessages id="header.products" />
                 </Button>
                 <Button variant="contained" color="secondary">
-                  المنتجات
+                <IntlMessages id="header.aboutus" />
                 </Button>
                 <Button variant="contained" disabled>
-                  Disabled
+                <IntlMessages id="header.contactus" />
                 </Button>
                 <Button variant="contained" color="primary" href="#contained-buttons">
-                  اتصل بنا
+                <IntlMessages id="header.login" />
                 </Button>
               </div> 
               </div> 

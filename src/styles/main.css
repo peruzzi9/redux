@@ -83,6 +83,13 @@ body {
   background-color: #98c4f0;
 }
 
+/* RTL Class this is part of it */
+/* here you can make other attributes for web elements */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
 /*Theme Dark Amber Styles*/
 body.dark-theme {
   color: #E0E0E0;

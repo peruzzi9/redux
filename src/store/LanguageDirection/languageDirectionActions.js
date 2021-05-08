@@ -3,11 +3,6 @@ import {
     SWITCH_LANGUAGE
 } from '../actionTypes';
  
-export function changeDirection() {
-    return {type: CHANGE_DIRECTION};
-}
- 
- 
 export function switchLanguage(locale) {
     localStorage.setItem('locale',JSON.stringify(locale));
     //document.title = locale.locale == "ar" ? "مثال بالريدوكس": "Redux Example";

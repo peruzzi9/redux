@@ -24,6 +24,7 @@ const App = ({Settings}) => {
 console.log("App settings from  store ===", Settings)
 let { themeColor } = { themeColor: Settings.themeColor };
 let  language  =  Settings.language ; 
+let isDirectionRTL=Settings.isDirectionRTL ; 
 document.title = language.locale == "ar" ? "مثال بالريدوكس": "Redux Example"; 
   //applyTheme= createMuiTheme(alaaTheme);
   /* if (isDarkTheme) {
@@ -55,6 +56,14 @@ document.title = language.locale == "ar" ? "مثال بالريدوكس": "Redux
 
     }
   /* } */
+  console.log("isDirectionRTL=====",isDirectionRTL)
+  if (isDirectionRTL) {
+    applyTheme.direction = 'rtl';
+    document.body.classList.add('rtl')
+} else {
+    document.body.classList.remove('rtl');
+    applyTheme.direction = 'ltr';
+}
 
   const currentAppLocale = AppLocale[language.locale];
   return (
@@ -88,7 +97,8 @@ const mapStateToProps = statefromstore => {
   const { themeColor, darkTheme } = statefromstore.theme;
   //get language from redux store
   const  language  = statefromstore.languageDirection.locale;
-  return { Settings: { themeColor, isDarkTheme: darkTheme ,language } }
+  const  isDirectionRTL  = statefromstore.languageDirection.isDirectionRTL;
+  return { Settings: { themeColor, isDarkTheme: darkTheme ,language,isDirectionRTL } }
   // very very important name returned here should be the same in  
   // function defention
   // const App = ({themeSettings}) => {

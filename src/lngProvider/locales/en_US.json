@@ -3,5 +3,12 @@
   "article.add": "ADD",
   "article.delete": "DELETE",
   "article.clearall": "DELETE ALL",
-  "article.allarticletitle": "Articles"
+  "article.allarticletitle": "Articles",
+
+  "header.homepage":"Home",
+  "header.aboutus":"About",
+  "header.contactus":"Contact us",
+  "header.login":"Login",
+  "header.products":"Products",
+  "header.downloads":"Downloads"
 }
