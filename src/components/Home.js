@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom";
+import { Link ,useHistory } from "react-router-dom";
 
 // MaterialUi
 import Button from '@material-ui/core/Button';
@@ -13,6 +13,13 @@ import { connect } from "react-redux"
 
 const Home = ({ language }) => {
   //this is come after mapStateToProps
+  
+  let history=useHistory();
+
+  let back = e => {
+    e.stopPropagation();
+    history.goBack();
+  };
 
   return (
     <div>
@@ -26,6 +33,11 @@ const Home = ({ language }) => {
             <IntlMessages id="header.homepage" />
           </Button>
         </Link>
+        <div>
+         <button type="button" onClick={back}>
+           back to last visited page using history
+         </button> 
+        </div>
         
       </div>
       

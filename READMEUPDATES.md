@@ -1,3 +1,16 @@
+# =============== 9/05/2021 3 ===============
+
+# use navegate history to go back to previous page
+# bmw cars list can be reached from two place : 
+- from allproducts page
+- from allcars page
+
+so we will back to the correct used page by using history
+
+also from home page we can back to the last visited page before come to home
+
+The useHistory hook gives you access to the history instance that you may use to navigate.
+
 # =============== 9/05/2021 2 ===============
 # route with the using of URL parameters
 http://localhost:3000/myapp/products/cars/bmw/1
