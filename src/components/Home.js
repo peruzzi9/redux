@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // MaterialUi
 import Button from '@material-ui/core/Button';
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
       language: language
   }
 }
-export default withRouter(connect(mapStateToProps)(Home))
+export default connect(mapStateToProps)(Home)

@@ -5,6 +5,8 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
+// sub router
+import MyRoutes from "./routes"
 
 import logo from './logo.svg';
 import Articles from "./containers/Articles"
@@ -83,6 +85,8 @@ const App = ({ Settings }) => {
         messages={currentAppLocale.messages}>
 
         <div className="App">
+          {/* Here come root route 
+          to warp all components */}
           <Router>
           <div>
             {/* Header should be inside Router to make Link works */}
@@ -105,14 +109,19 @@ const App = ({ Settings }) => {
                  <Route exact path="/">
                   <Home />
                 </Route>
-                <Route path="/articles" component={Articles} />
-                <Route path="/products" component={Articles} />
+                {/* master routes */}
                 <Route path="/aboutus" component={Aboutus} />
                 <Route path="/contactus" component={Articles} />
                 <Route path="/login" component={Articles} />
                 <Route path="/oldarticles">
-                  <Redirect to="/articles" />
+                  <Redirect to="myapp/articlesmanage" />
                 </Route>
+                 {/* sub routes / another routes to make route easyer and simple
+                     we distribute route inside many route files in the project
+                     so we can update and modify easy
+                 */}
+                 {/* myapproute code be any name  */}
+                 <Route path="/myapp" component={MyRoutes} />
                 <Route path="*">
                   <NoMatch />
                 </Route>

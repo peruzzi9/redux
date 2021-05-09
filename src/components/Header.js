@@ -1,6 +1,14 @@
 import React, { useState } from "react"
 import { Link, withRouter } from "react-router-dom";
-
+/* if you want that your component receive RouterProps(history,location,history.push  ....),
+ but don't want to wrap it in <Route component={Some}>.
+  You can just use withRouter function to connect component
+   to the router, without additional manipulations 
+   or jsx tags wrapping. You can just "export default withRouter(component)" 
+   
+   Header here is shered component used every where and it is not called/warped 
+   as <Route path="/header"  component={Header}>
+   so we use  withRouter to give it access to Route props (history,location,history.push  ....)*/
 import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher"
 import LanguageSwitcher from "./LanguageSwitcher"
 
@@ -25,12 +33,12 @@ const Header = () => {
             <IntlMessages id="header.homepage" />
           </Button>
         </Link>
-        <Link to="/articles">
+        <Link to="/myapp/articlesmanage">
           <Button variant="contained" color="secondary">
             <IntlMessages id="article.allarticletitle" />
           </Button>
         </Link>
-        <Link to="/products">
+        <Link to="/myapp/products">
           <Button variant="contained" color="primary">
             <IntlMessages id="header.products" />
           </Button>
