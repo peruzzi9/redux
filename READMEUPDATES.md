@@ -1,3 +1,10 @@
+# =============== 9/05/2021 2 ===============
+# route with the using of URL parameters
+http://localhost:3000/myapp/products/cars/bmw/1
+
+using useParams hook
+display car details by id
+
 # =============== 9/05/2021 ===============
 # make an example for nested routes
 ## prodaucts,cars,....
