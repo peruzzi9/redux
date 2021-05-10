@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# =============== 9/05/2021 3 ===============
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# use navegate history to go back to previous page
+# bmw cars list can be reached from two place : 
+- from allproducts page
+- from allcars page
 
-## Available Scripts
+so we will back to the correct used page by using history
 
-In the project directory, you can run:
+also from home page we can back to the last visited page before come to home
 
-### `npm start`
+The useHistory hook gives you access to the history instance that you may use to navigate.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# =============== 9/05/2021 2 ===============
+# route with the using of URL parameters
+http://localhost:3000/myapp/products/cars/bmw/1
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+using useParams hook
+display car details by id
 
-### `npm test`
+# =============== 9/05/2021 ===============
+# make an example for nested routes
+## prodaucts,cars,....
+### explain when to use withRouter
+#### explain the use of useRouteMatch
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# =============== 06/05/2021 ===============
+# fix change direction and clean not nessecary code
+# make reddirection to theme 
+### update main menu titles depending on language
 
-### `npm run build`
+# =============== 05/05/2021 ===============
+# get language from store in all existing component
+## change title of website depending on that
+### add languages files translator 
+#### change texts of interface depending on these files and current language using  language provider of "react-intl" library 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+note : we shoud install specific version of  react-intl ....
+ npm i -s react-intl@^2.4.0
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### add DroidKufi-Regular font 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# =============== 04/05/2021 ===============
+# adding language switcher component
+## adding language switcher reducer and actions
+### fix : move theme switcher from container to components folder and update imports
 
-### `npm run eject`
+# =============== 03/05/2021 ===============
+#
+# ADDING THEME FILES AND STYLES TO REDUX (main.css)
+## RE-STRUCTURE REDUX STOR , AND MAKE FOLDER FOR EVERY SPECIFIC SETTINGS
+### COMBINE DEFFIRINT REDUCERS ( THEME , ARTICLES) IN ONE STORE AND WORK WITH THIS  STORE
+#### use materialui themeing 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
