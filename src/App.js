@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 // sub router
 import MyRoutes from "./routes"
+import MyPrivateRoutes from "./routesPrivate"
+
 
 import logo from './logo.svg';
 import Articles from "./containers/Articles"
@@ -15,6 +17,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./components/Home"
 import PrivatePage from "./containers/PrivatePage"
+import Login from "./containers/Login"
 
 import './styles/main.css';
 // need npm install  @material-ui/core before import MaterialUI
@@ -36,6 +39,7 @@ const App = ({ Settings }) => {
   //this is come after mapStateToProps
 
   // check is User LoggedIn 
+  // change it to true for testing logged in user
   const isUserLoggedIn = false;
 
   console.log("App settings from  store ===", Settings)
@@ -111,19 +115,25 @@ const App = ({ Settings }) => {
                 // - A <Redirect> may be used to redirect old URLs to new ones
                 // - A <Route path="*> always matches */}
               <Switch>
+               {/*   RestrictedRoute : component for check user login state */}
+               {/*  //privateapp code be any name  
+                     // nested route for private
+                */}
+              <RestrictedRoute path={`/privateapp`} isUserLoggedIn={isUserLoggedIn} component={MyPrivateRoutes}/>
+                
                 <Route exact path="/">
                   <Home />
                 </Route>
                 {/* master routes */}
                 <Route path="/aboutus" component={Aboutus} />
                 <Route path="/contactus" component={Articles} />
-                <Route path="/login" component={Articles} />
+                <Route path="/login" component={Login} />
                 <Route path="/privatepage"
                   render={() => {
                     if (isUserLoggedIn) {
                       return <PrivatePage />;
                     } else {
-                      return <Redirect to="/" />;
+                      return <Redirect to="/login" />;
                     }
                   }} />
                 <Route path="/oldarticles">
@@ -133,7 +143,9 @@ const App = ({ Settings }) => {
                      we distribute route inside many route files in the project
                      so we can update and modify easy
                  */}
-                {/* myapproute code be any name  */}
+                {/*  //myapproute code be any name  
+                     // nested route for public
+                */}
                 <Route path="/myapp" component={MyRoutes} />
                 <Route path="*">
                   <NoMatch />
@@ -160,6 +172,24 @@ const App = ({ Settings }) => {
     );
   }
 }
+/* 
+RestrictedRoute check user if it is loggedin
+if user is logged in it will be route to nested private route and there it will be routed to right place
+if user is not logged in it will be redirected to login page
+*/
+const RestrictedRoute = ({component: Component, isUserLoggedIn, ...rest}) =>
+    <Route 
+     {...rest}
+        render={props =>
+          isUserLoggedIn
+                ? <Component {...props} />
+                : <Redirect
+                    to={{
+                        pathname: '/login',
+                        state: {from: props.location}
+                    }}
+                />}
+    />;
 
 const mapStateToProps = statefromstore => {
   console.log("App=== Global State Store ======", statefromstore)
@@ -173,4 +203,5 @@ const mapStateToProps = statefromstore => {
   // const App = ({themeSettings}) => {
   //return themeSettings
 };
+
 export default connect(mapStateToProps)(App)

@@ -38,6 +38,11 @@ const Header = () => {
             <IntlMessages id="article.allarticletitle" />
           </Button>
         </Link>
+        <Link to="/privateapp/articles">
+          <Button variant="contained" color="secondary">
+            Private<IntlMessages id="article.allarticletitle" />
+          </Button>
+        </Link>
         <Link to="/myapp/products">
           <Button variant="contained" color="primary">
             <IntlMessages id="header.products" />
@@ -67,7 +72,7 @@ const Header = () => {
         <Button variant="contained" disabled>
           <IntlMessages id="header.contactus" />
         </Button>
-        <Button variant="contained" color="primary" href="#contained-buttons">
+        <Button variant="contained" color="primary" href="/login">
           <IntlMessages id="header.login" />
         </Button>
       </div>
