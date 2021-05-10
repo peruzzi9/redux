@@ -1,3 +1,5 @@
+# === 10/05/2021 2 ===
+- check user login in App and redirect to home if not loggedin
 # === 10/05/2021  ===
 - use of useLocation to search URL query
 # === 9/05/2021 3 ===

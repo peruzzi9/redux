@@ -14,6 +14,7 @@ import Aboutus from "./containers/Aboutus"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Home from "./components/Home"
+import PrivatePage from "./containers/PrivatePage"
 
 import './styles/main.css';
 // need npm install  @material-ui/core before import MaterialUI
@@ -33,6 +34,10 @@ import { connect } from 'react-redux';
 
 const App = ({ Settings }) => {
   //this is come after mapStateToProps
+
+  // check is User LoggedIn 
+  const isUserLoggedIn = false;
+
   console.log("App settings from  store ===", Settings)
   let { themeColor } = { themeColor: Settings.themeColor };
   let language = Settings.language;
@@ -88,14 +93,14 @@ const App = ({ Settings }) => {
           {/* Here come root route 
           to warp all components */}
           <Router>
-          <div>
-            {/* Header should be inside Router to make Link works */}
-            <Header />
-          </div>
-          <header  >
-            <img src={logo} className="App-logo" alt="logo" />
-          </header>
-          
+            <div>
+              {/* Header should be inside Router to make Link works */}
+              <Header />
+            </div>
+            <header  >
+              <img src={logo} className="App-logo" alt="logo" />
+            </header>
+
             <div>
               {/* // You can use the last <Route> in a <Switch> as a kind of
                   // "fallback" route, to catch 404 errors.
@@ -106,22 +111,30 @@ const App = ({ Settings }) => {
                 // - A <Redirect> may be used to redirect old URLs to new ones
                 // - A <Route path="*> always matches */}
               <Switch>
-                 <Route exact path="/">
+                <Route exact path="/">
                   <Home />
                 </Route>
                 {/* master routes */}
                 <Route path="/aboutus" component={Aboutus} />
                 <Route path="/contactus" component={Articles} />
                 <Route path="/login" component={Articles} />
+                <Route path="/privatepage"
+                  render={() => {
+                    if (isUserLoggedIn) {
+                      return <PrivatePage />;
+                    } else {
+                      return <Redirect to="/" />;
+                    }
+                  }} />
                 <Route path="/oldarticles">
                   <Redirect to="myapp/articlesmanage" />
                 </Route>
-                 {/* sub routes / another routes to make route easyer and simple
+                {/* sub routes / another routes to make route easyer and simple
                      we distribute route inside many route files in the project
                      so we can update and modify easy
                  */}
-                 {/* myapproute code be any name  */}
-                 <Route path="/myapp" component={MyRoutes} />
+                {/* myapproute code be any name  */}
+                <Route path="/myapp" component={MyRoutes} />
                 <Route path="*">
                   <NoMatch />
                 </Route>

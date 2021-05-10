@@ -54,6 +54,11 @@ const Header = () => {
         <Button variant="contained" color="secondary">
           <Link to="/also/will/not/match"><IntlMessages id="test.anylink" /></Link>
         </Button>
+        <Link to="/privatepage">
+          <Button variant="contained" color="secondary">
+            Private Page
+          </Button>
+        </Link>
 
 
 
