@@ -18,6 +18,7 @@ import Button from '@material-ui/core/Button';
 //change interface texts depending on language
 import IntlMessages from '../util/IntlMessages';
 
+import '../styles/main.css';
 
 const Header = () => {
   //this is come after mapStateToProps
@@ -28,39 +29,39 @@ const Header = () => {
         {/* this is materialui Button component  themed by MuiThemeProvider 
                    every change on theme color will effect these buttons
                 */}
-        <Link to="/">
+        <Link className="text-link"  to="/">
           <Button variant="contained">
             <IntlMessages id="header.homepage" />
           </Button>
         </Link>
-        <Link to="/myapp/articlesmanage">
-          <Button variant="contained" color="secondary">
+        <Link className="text-link"  to="/myapp/articlesmanage">
+          <Button variant="contained" color="primary">
             <IntlMessages id="article.allarticletitle" />
           </Button>
         </Link>
-        <Link to="/privateapp/articles">
+        <Link className="text-link"  to="/privateapp/articles">
           <Button variant="contained" color="secondary">
             Private<IntlMessages id="article.allarticletitle" />
           </Button>
         </Link>
-        <Link to="/myapp/products">
+        <Link className="text-link"  to="/myapp/products">
           <Button variant="contained" color="primary">
             <IntlMessages id="header.products" />
           </Button>
         </Link>
-        <Link to="/aboutus">
+        <Link className="text-link"  to="/aboutus">
           <Button variant="contained" color="secondary">
             <IntlMessages id="header.aboutus" />
           </Button>
         </Link>
-        <Button variant="contained" color="secondary">
-          <Link to="/oldarticles"><IntlMessages id="article.oldariclelink" /></Link>
+        <Button variant="contained" color="primary">
+          <Link className="text-link"  to="/oldarticles"><IntlMessages id="article.oldariclelink" /></Link>
         </Button>
         <Button variant="contained" color="secondary">
-          <Link to="/also/will/not/match"><IntlMessages id="test.anylink" /></Link>
+          <Link className="text-link"  to="/also/will/not/match"><IntlMessages id="test.anylink" /></Link>
         </Button>
-        <Link to="/privatepage">
-          <Button variant="contained" color="secondary">
+        <Link className="text-link"  to="/privatepage">
+          <Button variant="contained" color="primary">
             Private Page
           </Button>
         </Link>
@@ -72,7 +73,7 @@ const Header = () => {
         <Button variant="contained" disabled>
           <IntlMessages id="header.contactus" />
         </Button>
-        <Button variant="contained" color="primary" href="/login">
+        <Button variant="contained"   href="/login">
           <IntlMessages id="header.login" />
         </Button>
       </div>

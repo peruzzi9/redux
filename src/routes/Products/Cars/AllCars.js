@@ -26,23 +26,23 @@ const AllCars = () => {
   return (
     <div>
       <div>
-        <Link to={`/myapp/products/cars/bmw`}>
+        <Link className="text-link"  to={`/myapp/products/cars/bmw`}>
           BMW Cars
         </Link>
       </div>
       <div>
-        <Link to={`/myapp/products/cars/marceds`}>
+        <Link className="text-link"  to={`/myapp/products/cars/marceds`}>
           Marcedes Cars
         </Link>
       </div>
 
       <div>
-        <Link to={`/myapp/products/cars/allcars?brand=bmw`}>
+        <Link className="text-link"  to={`/myapp/products/cars/allcars?brand=bmw`}>
           BMW Cars by url query
         </Link>
       </div>
       <div>
-        <Link to={`/myapp/products/cars/allcars?brand=marceds`}>
+        <Link className="text-link"  to={`/myapp/products/cars/allcars?brand=marceds`}>
           Marcedes Cars by url query
         </Link>
       </div>

@@ -28,7 +28,7 @@ const Home = ({ language }) => {
                    every change on theme color will effect these buttons
                 */}
         <h1>You are in the home page component</h1>
-        <Link to="/">
+        <Link className="text-link"  to="/">
           <Button variant="contained">
             <IntlMessages id="header.homepage" />
           </Button>

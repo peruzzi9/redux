@@ -9,12 +9,12 @@ const Allproducts = () => {
 return(
     <div>
         <div>
-        <Link to={`/myapp/products/cars`}>
+        <Link className="text-link"  to={`/myapp/products/cars`}>
           Cars
         </Link>
         </div>
         <div>
-        <Link to={`/myapp/products/ships`}>
+        <Link className="text-link"  to={`/myapp/products/ships`}>
           SHIPS
         </Link>
         </div>

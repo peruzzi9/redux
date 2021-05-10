@@ -204,3 +204,7 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
+
+.text-link { 
+  text-decoration: inherit;
+}
