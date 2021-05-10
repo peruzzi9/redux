@@ -1,3 +1,5 @@
+# =============== 10/05/2021  ===============
+# use of useLocation to search URL query
 # =============== 9/05/2021 3 ===============
 
 # use navegate history to go back to previous page
