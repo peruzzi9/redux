@@ -1,9 +1,9 @@
 # =============== 10/05/2021  ===============
-# use of useLocation to search URL query
+- use of useLocation to search URL query
 # =============== 9/05/2021 3 ===============
 
-# use navegate history to go back to previous page
-# bmw cars list can be reached from two place : 
+- use navegate history to go back to previous page
+- bmw cars list can be reached from two place : 
 - from allproducts page
 - from allcars page
 
@@ -14,43 +14,43 @@ also from home page we can back to the last visited page before come to home
 The useHistory hook gives you access to the history instance that you may use to navigate.
 
 # =============== 9/05/2021 2 ===============
-# route with the using of URL parameters
+- route with the using of URL parameters
 http://localhost:3000/myapp/products/cars/bmw/1
 
 using useParams hook
 display car details by id
 
 # =============== 9/05/2021 ===============
-# make an example for nested routes
-## prodaucts,cars,....
-### explain when to use withRouter
-#### explain the use of useRouteMatch
+- make an example for nested routes
+- prodaucts,cars,....
+- explain when to use withRouter
+- explain the use of useRouteMatch
 
 # =============== 06/05/2021 ===============
-# fix change direction and clean not nessecary code
-# make reddirection to theme 
-### update main menu titles depending on language
+- fix change direction and clean not nessecary code
+- make reddirection to theme 
+- update main menu titles depending on language
 
 # =============== 05/05/2021 ===============
-# get language from store in all existing component
-## change title of website depending on that
-### add languages files translator 
-#### change texts of interface depending on these files and current language using  language provider of "react-intl" library 
+- get language from store in all existing component
+- change title of website depending on that
+- add languages files translator 
+- change texts of interface depending on these files and current language using  language provider of "react-intl" library 
 
 note : we shoud install specific version of  react-intl ....
  npm i -s react-intl@^2.4.0
 
-##### add DroidKufi-Regular font 
+- add DroidKufi-Regular font 
 
 # =============== 04/05/2021 ===============
-# adding language switcher component
-## adding language switcher reducer and actions
-### fix : move theme switcher from container to components folder and update imports
+- adding language switcher component
+- adding language switcher reducer and actions
+- fix : move theme switcher from container to components folder and update imports
 
 # =============== 03/05/2021 ===============
 #
-# ADDING THEME FILES AND STYLES TO REDUX (main.css)
-## RE-STRUCTURE REDUX STOR , AND MAKE FOLDER FOR EVERY SPECIFIC SETTINGS
-### COMBINE DEFFIRINT REDUCERS ( THEME , ARTICLES) IN ONE STORE AND WORK WITH THIS  STORE
-#### use materialui themeing 
+- ADDING THEME FILES AND STYLES TO REDUX (main.css)
+- RE-STRUCTURE REDUX STOR , AND MAKE FOLDER FOR EVERY SPECIFIC SETTINGS
+- COMBINE DEFFIRINT REDUCERS ( THEME , ARTICLES) IN ONE STORE AND WORK WITH THIS  STORE
+- use materialui themeing 
 
