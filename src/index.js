@@ -4,8 +4,13 @@ import ReactDOM from "react-dom"
 //import "./index.css"
 import App from "./App"
 
+// redux main import
 import { createStore } from "redux"
 import { Provider } from "react-redux"
+
+//for use redux-thunk
+import thunk from 'redux-thunk';
+import {  applyMiddleware } from 'redux';
 
 import combineReducers from "./store/combineReducers"
 
@@ -28,7 +33,7 @@ import combineReducers from "./store/combineReducers"
 
 // for multi combaining reducer to give the abiltity to access all reducers by one store
 // we use combineReducers
-const store = createStore(combineReducers)
+const store = createStore(combineReducers,applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>

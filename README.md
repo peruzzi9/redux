@@ -1,3 +1,11 @@
+# === 11/05/2021 1 ===
+- Saga works like a separate thread or a background process that is solely responsible for making your side effects or API calls
+- redux-thunk, which uses callbacks which may lead to situations like 'callback hell' in some cases
+- we will use  redux-thunk example then saga
+- for redux-thunk : 
+(simple example :https://www.digitalocean.com/community/tutorials/redux-redux-thunk)
+- get articles from api online
+- example contain loader and error display
 # === 10/05/2021 4 ===
 - improvement for material color ... it is not an important commite
 - remove underline from Link component

@@ -1,15 +1,18 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import Article from "../components/Articles/ShowArticles"
 import AddArticle from "../components/Articles/AddArticle"
 
 // MaterialUi
 import Button from '@material-ui/core/Button';
+import { CircularProgress } from '@material-ui/core';
+//or
+//import CircularProgress from '@material-ui/core/CircularProgress';
 
 // for  redux state and actions / store
 import { connect } from "react-redux"
 import * as actionTypes from "../store/actionTypes"
-import { clearAllArticles } from "../store/Articles/articleAction";
+import { clearAllArticles, getAllArticles } from "../store/Articles/articleAction";
 
 //change interface texts depending on language
 import IntlMessages from '../util/IntlMessages';
@@ -44,11 +47,19 @@ import IntlMessages from '../util/IntlMessages';
 // saveArticle new defintion using 
 // mapDispatchToProps
 
-const Articles = ({ articles, language , saveArticle, clearAllArticles }) => ( 
-  <div>
+const Articles = (
+  { articles,loading,error, language, saveArticle, clearAllArticles, getAllArticles }) => {
+
+  useEffect(() => getAllArticles(), [])
+
+  return (<div>
     <div><IntlMessages id="article.addtitle" /></div>
-    <AddArticle saveArticle={saveArticle} language={language}/>
-    <div><IntlMessages id="article.allarticletitle" /></div>
+    <AddArticle saveArticle={saveArticle} language={language} />
+    <div>  <h1>{loading?"Loading ... ":""}</h1>
+               {loading?<CircularProgress color="secondary" /> :""}
+               <h1>{error}</h1>
+        <IntlMessages id="article.allarticletitle" />
+    </div>
     {articles.map(article => (
       <Article key={article.id} article={article} language={language} />
 
@@ -57,7 +68,8 @@ const Articles = ({ articles, language , saveArticle, clearAllArticles }) => (
     {/* or */}
     {/* <button onClick={() => clearAllArticles()} >Clear all articles </button> */}
   </div>
-)
+  )
+}
 // get and connect with global state which is stored in redux store
 // mapStateToProps – this function determines which data is injected into the Articles display component.
 // here this data is articles
@@ -67,15 +79,17 @@ const Articles = ({ articles, language , saveArticle, clearAllArticles }) => (
 // and it can be {article,theme,auth} when we store is combine of many reducers
 // article here is object contain  articles 
 const mapStateToProps = state => {
-  console.log("Articles=== Global State Store===",state) 
+  console.log("Articles=== Global State Store===", state)
   //get language from redux store
-  const  language  = state.languageDirection.locale;
+  const language = state.languageDirection.locale;
   return {
     // very very important name returned here should be the same in  
     // function defention
     // const Articles = ({ articles, saveArticle, clearAllArticles }) => (
-   
+
     articles: state.article.articles,
+    loading : state.article.loading,
+    error   : state.article.error,
     /* when we defined reducer inside redux store
    state= {
   articles: [
@@ -84,7 +98,7 @@ const mapStateToProps = state => {
   ],
 }
     */
-   language : language
+    language: language
   }
 }
 
@@ -106,6 +120,7 @@ const mapDispatchToProps = dispatch => {
     // note here is not direct call to reducer
     // we call reducer through action.js file defintions and functions
     , clearAllArticles: () => dispatch(clearAllArticles())
+    , getAllArticles: () => dispatch(getAllArticles())
   }
 }
 
