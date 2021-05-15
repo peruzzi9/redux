@@ -1,3 +1,9 @@
+# === 11/05/2021 2 ===
+- What is a Redux middleware?(thunk and saga)
+Redux middleware is a function or a piece of code that sits between action and reducer and can interact with the dispatched action before reaching the reducer function.
+ - https://www.eternussolutions.com/2020/12/21/redux-thunk-redux-saga/
+ - example : https://medium.com/@lavitr01051977/make-your-first-call-to-api-using-redux-saga-15aa995df5b6
+
 # === 11/05/2021 1 ===
 - Saga works like a separate thread or a background process that is solely responsible for making your side effects or API calls
 - redux-thunk, which uses callbacks which may lead to situations like 'callback hell' in some cases

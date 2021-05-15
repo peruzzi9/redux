@@ -23,6 +23,9 @@ export const GET_ARTICLES_STARTED = "GET_ARTICLES_STARTED"
 export const GET_ARTICLES_SUCCESS = "GET_ARTICLES_SUCCESS"
 export const GET_ARTICLES_FAILURE = "GET_ARTICLES_FAILURE"
 
+export const GET_NEWS = "GET_NEWS" 
+export const NEWS_RECEIVED = "NEWS_RECEIVED" 
+export const NEWS_ERROR = "NEWS_ERROR"
 
 // SYSTEM Settings action types
 export const THEME_COLOR = 'theme_color';

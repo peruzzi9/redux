@@ -54,6 +54,11 @@ const Header = () => {
             <IntlMessages id="header.aboutus" />
           </Button>
         </Link>
+        <Link className="text-link"  to="/news">
+          <Button variant="contained" color="secondary">
+            <IntlMessages id="header.news" />
+          </Button>
+        </Link>
         <Button variant="contained" color="primary">
           <Link className="text-link"  to="/oldarticles"><IntlMessages id="article.oldariclelink" /></Link>
         </Button>

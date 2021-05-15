@@ -18,6 +18,7 @@ import Footer from "./components/Footer"
 import Home from "./components/Home"
 import PrivatePage from "./containers/PrivatePage"
 import Login from "./containers/Login"
+import News from "./containers/News"
 
 import './styles/main.css';
 // need npm install  @material-ui/core before import MaterialUI
@@ -128,6 +129,7 @@ const App = ({ Settings }) => {
                 <Route path="/aboutus" component={Aboutus} />
                 <Route path="/contactus" component={Articles} />
                 <Route path="/login" component={Login} />
+                <Route path="/news" component={News} />
                 <Route path="/privatepage"
                   render={() => {
                     if (isUserLoggedIn) {

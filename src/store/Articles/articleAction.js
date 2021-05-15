@@ -5,7 +5,16 @@ export const clearAllArticles = () => ({
   type: actionTypes.CLEAR_ARTICLES
 
 });
-
+/* Redux Thunk is a middleware that allows you to call the action creators
+ that return a function(thunk) which takes the store’s
+  dispatch method as the argument 
+  and which is afterwards used to dispatch the synchronous action 
+  after the API or side effects has been finished. */
+  
+/* getAllArticles() is an action creator which returns
+ a function which in turn takes dispatch method as the argument. 
+ After we have received the Articles from the server,
+  we will dispatch a regular synchronous action using the dispatch method. */
 export const getAllArticles = () => {
 
   return (dispatch) => {

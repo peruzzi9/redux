@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 import articleReducer from "./Articles/articleReducer"
+import newsReducer from "./News/newsReducer"
 import themeReducer from "./Theme/themeReducer"
 import languageDirectionReducer from "./LanguageDirection/languageDirectionReducer"
 
@@ -15,6 +16,7 @@ export default combineReducers(
 
         // articleReducer is the real name , it is the reducer with stored values
         article:articleReducer,
+        news:newsReducer,
         theme:themeReducer,
         languageDirection:languageDirectionReducer
     });

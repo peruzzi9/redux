@@ -10,7 +10,17 @@ import { Provider } from "react-redux"
 
 //for use redux-thunk
 import thunk from 'redux-thunk';
+
 import {  applyMiddleware } from 'redux';
+// greate (inspect logger) for redux
+import {  logger  } from 'redux-logger';
+
+//for use redux saga
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './sagas';
+
+// With redux-thunk you can put an API call directly inside an action creator 
+// while in redux-saga you can have clear separation between synchronous and asynchronous logic.
 
 import combineReducers from "./store/combineReducers"
 
@@ -30,10 +40,14 @@ import combineReducers from "./store/combineReducers"
 
 
 //====================================================
-
+const saga = createSagaMiddleware();
 // for multi combaining reducer to give the abiltity to access all reducers by one store
 // we use combineReducers
-const store = createStore(combineReducers,applyMiddleware(thunk))
+// add saga middleware and use thunk & saga at the same time in same project 
+// without any problem ... articles will work with thunk / news will work with saga
+const store = createStore(combineReducers,applyMiddleware(thunk,saga,logger))
+
+saga.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
