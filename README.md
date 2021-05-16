@@ -1,3 +1,8 @@
+# === 16/05/2021  ===
+# Implement useSelector/useDispatch
+- replace connect() mapStateToProps and mapDispatchToProps with
+useSelector/useDispatch
+- create a copy of Articles page called Articleshooks as an example of use useSelector/useDispatch
 # === 11/05/2021 2 ===
 - What is a Redux middleware?(thunk and saga)
 Redux middleware is a function or a piece of code that sits between action and reducer and can interact with the dispatched action before reaching the reducer function.

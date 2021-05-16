@@ -12,6 +12,7 @@ import MyPrivateRoutes from "./routesPrivate"
 
 import logo from './logo.svg';
 import Articles from "./containers/Articles"
+import ArticlesHooks from "./containers/ArticlesHooks"
 import Aboutus from "./containers/Aboutus"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -128,6 +129,7 @@ const App = ({ Settings }) => {
                 {/* master routes */}
                 <Route path="/aboutus" component={Aboutus} />
                 <Route path="/contactus" component={Articles} />
+                <Route path="/articleshooks" component={ArticlesHooks} />
                 <Route path="/login" component={Login} />
                 <Route path="/news" component={News} />
                 <Route path="/privatepage"
