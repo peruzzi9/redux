@@ -1,3 +1,13 @@
+# === 31/10/2022  ===
+# Create and run the production build
+- First : Create the production build for our application.
+- npm run build
+- then run the app in production mode.
+- > npm install -g serve
+- > serve -s build
+- this will run app ( last build ) in production mode on http://localhost:3000
+- Reference : https://www.copycat.dev/blog/reactjs-build-production/
+
 # === 16/05/2021  ===
 # Implement useSelector/useDispatch
 - replace connect() mapStateToProps and mapDispatchToProps with
